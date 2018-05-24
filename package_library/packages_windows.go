@@ -21,7 +21,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/GoogleCloudPlatform/compute-image-tools/osinfo"
+	"github.com/collabora-gce/compute-image-tools/osinfo"
 	"github.com/StackExchange/wmi"
 	ole "github.com/go-ole/go-ole"
 	"github.com/go-ole/go-ole/oleutil"

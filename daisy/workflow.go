@@ -32,7 +32,7 @@ import (
 
 	"cloud.google.com/go/logging"
 	"cloud.google.com/go/storage"
-	"github.com/GoogleCloudPlatform/compute-image-tools/daisy/compute"
+	"github.com/collabora-gce/compute-image-tools/daisy/compute"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 )

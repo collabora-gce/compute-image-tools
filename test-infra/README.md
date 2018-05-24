@@ -1,4 +1,4 @@
-# GoogleCloudPlatform/compute-image-tools testing infrastructure
+# collabora-gce/compute-image-tools testing infrastructure
 
 ## Prow and Gubenator
 We use [Prow](https://github.com/kubernetes/test-infra/tree/master/prow)

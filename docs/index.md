@@ -1,7 +1,7 @@
 # Google Compute Engine (GCE) Image Tools
 
 This site contains documentation for the tools available from the
-[GoogleCloudPlatform/compute-image-tools](https://github.com/GoogleCloudPlatform/compute-image-tools)
+[collabora-gce/compute-image-tools](https://github.com/GoogleCloudPlatform/compute-image-tools)
 GitHub repository.
 
 ## [Daisy](daisy.md)

@@ -28,11 +28,11 @@ if [ $? -ne 0 ]; then
 fi
 
 # Setup GOPATH
-mkdir -p go/src/github.com/GoogleCloudPlatform
+mkdir -p go/src/github.com/collabora-gce
 export GOPATH=$HOME/go
 
 # Clone the github repo.
-pushd $GOPATH/src/github.com/GoogleCloudPlatform
+pushd $GOPATH/src/github.com/collabora-gce
 git clone ${GIT_REPO} -b ${BRANCH}
 if [ $? -ne 0 ]; then
   echo "BuildFailed: Unable to clone github repo ${GIT_REPO} and branch ${BRANCH}"
@@ -41,16 +41,16 @@ fi
 popd
 
 # Build daisy
-pushd $GOPATH/src/github.com/GoogleCloudPlatform/compute-image-tools/daisy
+pushd $GOPATH/src/github.com/collabora-gce/compute-image-tools/daisy
 go get ./...
 popd
 
-pushd $GOPATH/src/github.com/GoogleCloudPlatform/compute-image-tools/cli_tools/daisy
+pushd $GOPATH/src/github.com/collabora-gce/compute-image-tools/cli_tools/daisy
 go build
 popd
 
 # Run daisy
-pushd $GOPATH/src/github.com/GoogleCloudPlatform/compute-image-tools/cli_tools/daisy
+pushd $GOPATH/src/github.com/collabora-gce/compute-image-tools/cli_tools/daisy
 
 ./daisy ../../daisy_workflows/e2e_tests/attach_disks.wf.json
 if [ $? -ne 0 ]; then

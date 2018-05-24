@@ -20,7 +20,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/GoogleCloudPlatform/compute-image-tools/daisy/compute"
+	"github.com/collabora-gce/compute-image-tools/daisy/compute"
 )
 
 // Resource is the base struct for Daisy representation structs for GCE resources.

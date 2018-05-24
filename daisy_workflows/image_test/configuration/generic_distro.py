@@ -261,7 +261,7 @@ class GenericDistroTests(object):
     Test for gcloud/gsutil (some distros won't have this) and validate that
     versions are up to date.
 
-    https://github.com/GoogleCloudPlatform/compute-image-tools/issues/400
+    https://github.com/collabora-gce/compute-image-tools/issues/400
     """
     # firstly check if gcloud and gsutil are available
     rc_gcloud, output = utils.Execute(['gcloud', 'info'], raise_errors=False)

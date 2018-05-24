@@ -17,7 +17,7 @@ package daisy
 import (
 	"sync"
 
-	"github.com/GoogleCloudPlatform/compute-image-tools/daisy/compute"
+	"github.com/collabora-gce/compute-image-tools/daisy/compute"
 )
 
 var zonesCache struct {

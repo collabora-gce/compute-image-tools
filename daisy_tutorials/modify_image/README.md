@@ -1,7 +1,7 @@
 # Modifying a base image using Daisy
 
 Daisy workflows [have many
-capabilities,](https://github.com/GoogleCloudPlatform/compute-image-tools/tree/master/daisy#workflow-config-overview)
+capabilities,](https://github.com/collabora-gce/compute-image-tools/tree/master/daisy#workflow-config-overview)
 and it is hard to know where to start. This tutorial will demonstrate
 writing a very simple workflow to modify a GCE base image.
 
@@ -156,7 +156,7 @@ That completes our workflow.
 Clone the code:
 
 ```
-git clone https://github.com/GoogleCloudPlatform/compute-image-tools.git
+git clone https://github.com/collabora-gce/compute-image-tools.git
 cd compute-image-tools/daisy_tutorials/modify_image/
 ```
 
@@ -189,9 +189,9 @@ centos-emacs                                 my-project                        R
 
 Now that you have a basic workflow, you can experiment with the many
 options of the steps. Also, using
-[variables](https://github.com/GoogleCloudPlatform/compute-image-tools/tree/master/daisy#vars)
+[variables](https://github.com/collabora-gce/compute-image-tools/tree/master/daisy#vars)
 will make the workflow much more flexible.
 
 This workflow is very simple, take a look at the [example
-workflows](https://github.com/GoogleCloudPlatform/compute-image-tools/tree/master/daisy_workflows)
+workflows](https://github.com/collabora-gce/compute-image-tools/tree/master/daisy_workflows)
 to see full featured automatable workflows.

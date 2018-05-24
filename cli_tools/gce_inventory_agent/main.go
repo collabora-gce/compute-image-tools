@@ -31,9 +31,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/GoogleCloudPlatform/compute-image-tools/osinfo"
-	"github.com/GoogleCloudPlatform/compute-image-tools/package_library"
-	"github.com/GoogleCloudPlatform/compute-image-tools/service_library"
+	"github.com/collabora-gce/compute-image-tools/osinfo"
+	"github.com/collabora-gce/compute-image-tools/package_library"
+	"github.com/collabora-gce/compute-image-tools/service_library"
 	"github.com/google/logger"
 )
 

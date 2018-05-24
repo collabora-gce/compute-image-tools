@@ -29,14 +29,14 @@ accept your pull requests.
 1. Ensure that your code adheres to the existing style in the sample to which
    you are contributing. Refer to the
    [Google Cloud Platform Samples Style Guide]
-   (https://github.com/GoogleCloudPlatform/Template/wiki/style.html) for the
+   (https://github.com/collabora-gce/Template/wiki/style.html) for the
    recommended coding standards for this organization.
 1. Ensure that your code has an appropriate set of unit tests which all pass.
 1. Submit a pull request.
 
 ## Contributing a new sample App
 
-1. Submit an issue to the `GoogleCloudPlatform/Template` repo describing your
+1. Submit an issue to the `collabora-gce/Template` repo describing your
    proposed sample app.
 1. The Template repo owner will respond to your enhancement issue promptly.
    Instructional value is the top priority when evaluating new app proposals for
@@ -53,12 +53,12 @@ accept your pull requests.
       appengine-sockets-python-java-go.
 
 1. Clone the `README.md`, `CONTRIB.md` and `LICENSE` files from the
-   GoogleCloudPlatform/Template repo.
+   collabora-gce/Template repo.
 1. Ensure that your code adheres to the existing style in the sample to which
    you are contributing. Refer to the
    [Google Cloud Platform Samples Style Guide]
-   (https://github.com/GoogleCloudPlatform/Template/wiki/style.html) for the
+   (https://github.com/collabora-gce/Template/wiki/style.html) for the
    recommended coding standards for this organization.
 1. Ensure that your code has an appropriate set of unit tests which all pass.
-1. Submit a request to fork your repo in GoogleCloudPlatform organization via
+1. Submit a request to fork your repo in collabora-gce organization via
    your proposal issue.

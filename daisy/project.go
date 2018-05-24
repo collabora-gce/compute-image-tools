@@ -18,7 +18,7 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/GoogleCloudPlatform/compute-image-tools/daisy/compute"
+	"github.com/collabora-gce/compute-image-tools/daisy/compute"
 	"google.golang.org/api/googleapi"
 )
 

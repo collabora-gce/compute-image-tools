@@ -255,14 +255,14 @@ import. Below is a list of known compatibility requirements and issues:
 ### Compatibility Precheck Tool
 Image import has a long runtime, can fail due to incompatibilities, and can
 cause unexpected behavior post-import. As such, you may find it useful to run
-our [precheck tool](https://github.com/GoogleCloudPlatform/compute-image-tools/tree/master/cli_tools/import_precheck/)
+our [precheck tool](https://github.com/collabora-gce/compute-image-tools/tree/master/cli_tools/import_precheck/)
 to check for the known issues listed above.
 
 # Advanced Topics
 
 ### Installing Daisy on your computer
 
-[Pre-built binaries](https://github.com/GoogleCloudPlatform/compute-image-tools/tree/master/daisy#prebuilt-binaries) are available.
+[Pre-built binaries](https://github.com/collabora-gce/compute-image-tools/tree/master/daisy#prebuilt-binaries) are available.
 
 Or, you can run one of the following commands to install Daisy and workflow files on a Debian or Ubuntu based system.
 
@@ -277,7 +277,7 @@ apt-get update
 apt-get -y install git
 
 mkdir /daisy
-git clone https://github.com/GoogleCloudPlatform/compute-image-tools.git /tmp/compute-image-tools
+git clone https://github.com/collabora-gce/compute-image-tools.git /tmp/compute-image-tools
 
 cp -R /tmp/compute-image-tools/daisy_workflows/image_import/* /daisy/
 chmod -R u+rwX,g+rX,o+rX /daisy
@@ -306,8 +306,8 @@ In order to complete most workflows, specifically import workflows, Daisy needs 
 
 ### Advanced Daisy Parameters
 
-Refer to https://github.com/GoogleCloudPlatform/compute-image-tools/tree/master/daisy#running-daisy for the full list of Daisy parameters.
+Refer to https://github.com/collabora-gce/compute-image-tools/tree/master/daisy#running-daisy for the full list of Daisy parameters.
 
 ### Custom Daisy Workflows
 
-Daisy documentation (https://github.com/GoogleCloudPlatform/compute-image-tools/tree/master/daisy#workflow-config-overview) provides an overview of how to create and modify Daisy workflows. You can also refer to sample image import workflows at https://github.com/GoogleCloudPlatform/compute-image-tools/tree/master/daisy_workflows/image_import
+Daisy documentation (https://github.com/collabora-gce/compute-image-tools/tree/master/daisy#workflow-config-overview) provides an overview of how to create and modify Daisy workflows. You can also refer to sample image import workflows at https://github.com/GoogleCloudPlatform/compute-image-tools/tree/master/daisy_workflows/image_import

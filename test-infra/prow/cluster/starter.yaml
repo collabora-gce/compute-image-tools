@@ -8,7 +8,7 @@ metadata:
   name: plugins
 data:
   plugins: |
-    GoogleCloudPlatform/compute-image-tools:
+    collabora-gce/compute-image-tools:
     - size
     - trigger
 ---

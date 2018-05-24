@@ -26,7 +26,7 @@ import (
 	"sync"
 
 	"cloud.google.com/go/compute/metadata"
-	"github.com/GoogleCloudPlatform/compute-image-tools/daisy"
+	"github.com/collabora-gce/compute-image-tools/daisy"
 )
 
 var (

@@ -23,7 +23,7 @@ import (
 	"testing"
 	"time"
 
-	daisyCompute "github.com/GoogleCloudPlatform/compute-image-tools/daisy/compute"
+	daisyCompute "github.com/collabora-gce/compute-image-tools/daisy/compute"
 	compute "google.golang.org/api/compute/v1"
 	"google.golang.org/api/googleapi"
 )

@@ -3,6 +3,6 @@
 # Values: List of plugins to run against the repo.
 ---
 plugins:
-  GoogleCloudPlatform/compute-image-tools:
+  collabora-gce/compute-image-tools:
   - size
   - trigger

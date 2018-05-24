@@ -29,7 +29,7 @@ import (
 
 	"cloud.google.com/go/logging"
 	"cloud.google.com/go/storage"
-	daisyCompute "github.com/GoogleCloudPlatform/compute-image-tools/daisy/compute"
+	daisyCompute "github.com/collabora-gce/compute-image-tools/daisy/compute"
 	"github.com/davecgh/go-spew/spew"
 	emptypb "github.com/golang/protobuf/ptypes/empty"
 	godebugDiff "github.com/kylelemons/godebug/diff"

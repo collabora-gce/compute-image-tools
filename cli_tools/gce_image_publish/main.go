@@ -34,8 +34,8 @@ import (
 	"time"
 
 	"cloud.google.com/go/compute/metadata"
-	"github.com/GoogleCloudPlatform/compute-image-tools/daisy"
-	daisyCompute "github.com/GoogleCloudPlatform/compute-image-tools/daisy/compute"
+	"github.com/collabora-gce/compute-image-tools/daisy"
+	daisyCompute "github.com/collabora-gce/compute-image-tools/daisy/compute"
 	"google.golang.org/api/compute/v1"
 )
 

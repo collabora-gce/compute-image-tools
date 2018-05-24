@@ -19,7 +19,7 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/GoogleCloudPlatform/compute-image-tools/osinfo"
+	"github.com/collabora-gce/compute-image-tools/osinfo"
 	"github.com/google/logger"
 )
 

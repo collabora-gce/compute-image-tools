@@ -19,7 +19,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/GoogleCloudPlatform/compute-image-tools/daisy"
+	"github.com/collabora-gce/compute-image-tools/daisy"
 	"github.com/kylelemons/godebug/pretty"
 	"google.golang.org/api/compute/v1"
 )

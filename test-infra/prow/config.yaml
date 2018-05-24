@@ -12,11 +12,11 @@ pod_namespace: test-pods
 
 triggers:
 - repos:
-  - GoogleCloudPlatform/compute-image-tools
-  trusted_org: GoogleCloudPlatform
+  - collabora-gce/compute-image-tools
+  trusted_org: collabora-gce
 
 presubmits:
- GoogleCloudPlatform/compute-image-tools:
+ collabora-gce/compute-image-tools:
  - name: presubmit-unittests
    agent: kubernetes
    always_run: true
@@ -106,7 +106,7 @@ periodics:
       - "--tests=e2e_tests"
       env:
       - name: REPO_OWNER
-        value: GoogleCloudPlatform
+        value: collabora-gce
       - name: REPO_NAME
         value: compute-image-tools
       volumeMounts:

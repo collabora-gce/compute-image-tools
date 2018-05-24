@@ -2,7 +2,7 @@
   "Name": "daisy-cloud-logs-test",
   "Vars": {
     "github_repo": {
-      "Value": "https://github.com/GoogleCloudPlatform/compute-image-tools.git",
+      "Value": "https://github.com/collabora-gce/compute-image-tools.git",
       "Description": "Github repo to build packages from."
     },
     "github_branch": {
