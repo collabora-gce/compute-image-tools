@@ -13,8 +13,8 @@
 # limitations under the License.
 
 # Variable defaults.
-PROJECT       ?= compute-image-tools-test
-BUILD_PROJECT ?= compute-image-tools-test
+PROJECT       ?= main-nucleus-128012
+BUILD_PROJECT ?= main-nucleus-128012
 ZONE          ?= us-west1-b
 CLUSTER       ?= prow
 

@@ -3,8 +3,8 @@ These directories contain source code for containers used by Prow. An example
 process for updating the unittests container image is as follows:
 
 1. Make changes.
-2. In the unittests dir: `docker build --tag gcr.io/compute-image-tools-test/unittests:latest .`
+2. In the unittests dir: `docker build --tag gcr.io/main-nucleus-128012/unittests:latest .`
 3. Manually test the image before pushing:
- * `docker run -e "REPO_OWNER=collabora-gce" -e "REPO_NAME=compute-image-tools" -e "PULL_NUMBER=264" -v ~/codecovtoken:/etc/codecov/token gcr.io/compute-image-tools-test/unittests:latest`
+ * `docker run -e "REPO_OWNER=collabora-gce" -e "REPO_NAME=compute-image-tools" -e "PULL_NUMBER=264" -v ~/codecovtoken:/etc/codecov/token gcr.io/main-nucleus-128012/unittests:latest`
 4. Push the image to Google Container Registry:
- * `gcloud docker -- push gcr.io/compute-image-tools-test/unittests:latest`
+ * `gcloud docker -- push gcr.io/main-nucleus-128012/unittests:latest`

@@ -28,7 +28,7 @@ import (
 	"cloud.google.com/go/storage"
 )
 
-const bucketName = "compute-image-tools-test"
+const bucketName = "main-nucleus-128012"
 
 var (
 	artifactsDir = os.Getenv("ARTIFACTS")

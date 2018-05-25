@@ -16,7 +16,7 @@ import os as _os
 
 import run.common
 
-BUCKET = 'compute-image-tools-test'
+BUCKET = 'main-nucleus-128012'
 BUILD_API_URL = 'https://cloudbuild.googleapis.com/v1'
 BUILD_NUM = _os.environ['BUILD_NUMBER']
 GCS_API_BASE = 'https://storage.googleapis.com'
@@ -27,4 +27,4 @@ REPO_OWNER = _os.environ['REPO_OWNER']
 REPO_NAME = _os.environ['REPO_NAME']
 REPO_URL = 'https://github.com/%s/%s.git' % (REPO_OWNER, REPO_NAME)
 TEST_ID = str(run.common.unix_time())
-TEST_PROJECT = 'compute-image-tools-test'
+TEST_PROJECT = 'main-nucleus-128012'

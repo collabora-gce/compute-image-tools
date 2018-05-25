@@ -1,5 +1,5 @@
 plank:
- job_url_template: 'https://k8s-gubernator.appspot.com/build/compute-image-tools-test/{{if eq .Spec.Type "presubmit"}}pr-logs/pull/{{.Spec.Refs.Org}}_{{.Spec.Refs.Repo}}/{{with index .Spec.Refs.Pulls 0}}{{.Number}}{{end}}{{else if eq .Spec.Type "batch"}}pr-logs/pull/batch{{else}}logs{{end}}/{{.Spec.Job}}/{{.Status.BuildID}}/'
+ job_url_template: 'https://k8s-gubernator.appspot.com/build/main-nucleus-128012/{{if eq .Spec.Type "presubmit"}}pr-logs/pull/{{.Spec.Refs.Org}}_{{.Spec.Refs.Repo}}/{{with index .Spec.Refs.Pulls 0}}{{.Number}}{{end}}{{else if eq .Spec.Type "batch"}}pr-logs/pull/batch{{else}}logs{{end}}/{{.Spec.Job}}/{{.Status.BuildID}}/'
  report_template: '[Full PR test history](https://k8s-gubernator.appspot.com/pr/{{.Spec.Refs.Org}}_{{.Spec.Refs.Repo}}/{{with index .Spec.Refs.Pulls 0}}{{.Number}}{{end}}). [Your PR dashboard](https://k8s-gubernator.appspot.com/pr/{{with index .Spec.Refs.Pulls 0}}{{.Author}}{{end}}).'
 
 sinker:
@@ -25,21 +25,21 @@ presubmits:
    context: prow/presubmit/unittests
    spec:
     containers:
-    - image: gcr.io/compute-image-tools-test/unittests:latest
+    - image: gcr.io/main-nucleus-128012/unittests:latest
       volumeMounts:
       - name: codecov
         mountPath: /etc/codecov
         readOnly: true
-      - name: compute-image-tools-test-service-account
-        mountPath: /etc/compute-image-tools-test-service-account
+      - name: main-nucleus-128012-service-account
+        mountPath: /etc/main-nucleus-128012-service-account
         readOnly: true
     volumes:
     - name: codecov
       secret:
        secretName: codecov
-    - name: compute-image-tools-test-service-account
+    - name: main-nucleus-128012-service-account
       secret:
-       secretName: compute-image-tools-test-service-account
+       secretName: main-nucleus-128012-service-account
  - name: presubmit-gocheck
    agent: kubernetes
    always_run: true
@@ -49,15 +49,15 @@ presubmits:
    context: prow/presubmit/gocheck
    spec:
     containers:
-    - image: gcr.io/compute-image-tools-test/gocheck:latest
+    - image: gcr.io/main-nucleus-128012/gocheck:latest
       volumeMounts:
-      - name: compute-image-tools-test-service-account
-        mountPath: /etc/compute-image-tools-test-service-account
+      - name: main-nucleus-128012-service-account
+        mountPath: /etc/main-nucleus-128012-service-account
         readOnly: true
     volumes:
-    - name: compute-image-tools-test-service-account
+    - name: main-nucleus-128012-service-account
       secret:
-       secretName: compute-image-tools-test-service-account
+       secretName: main-nucleus-128012-service-account
  - name: presubmit-flake8
    agent: kubernetes
    always_run: true
@@ -67,15 +67,15 @@ presubmits:
    context: prow/presubmit/flake8
    spec:
     containers:
-    - image: gcr.io/compute-image-tools-test/flake8:latest
+    - image: gcr.io/main-nucleus-128012/flake8:latest
       volumeMounts:
-      - name: compute-image-tools-test-service-account
-        mountPath: /etc/compute-image-tools-test-service-account
+      - name: main-nucleus-128012-service-account
+        mountPath: /etc/main-nucleus-128012-service-account
         readOnly: true
     volumes:
-    - name: compute-image-tools-test-service-account
+    - name: main-nucleus-128012-service-account
       secret:
-       secretName: compute-image-tools-test-service-account
+       secretName: main-nucleus-128012-service-account
  - name: presubmit-gobuild
    agent: kubernetes
    always_run: true
@@ -85,23 +85,30 @@ presubmits:
    context: prow/presubmit/gobuild
    spec:
     containers:
-    - image: gcr.io/compute-image-tools-test/gobuild:latest
+    - image: gcr.io/main-nucleus-128012/gobuild:latest
       volumeMounts:
-      - name: compute-image-tools-test-service-account
-        mountPath: /etc/compute-image-tools-test-service-account
+      - name: main-nucleus-128012-service-account
+        mountPath: /etc/main-nucleus-128012-service-account
         readOnly: true
     volumes:
-    - name: compute-image-tools-test-service-account
+    - name: main-nucleus-128012-service-account
       secret:
-       secretName: compute-image-tools-test-service-account
+       secretName: main-nucleus-128012-service-account
 
 periodics:
+- interval: 1m
+  agent: kubernetes
+  name: echo-test
+  spec:
+    containers:
+    - image: alpine
+      command: ["/bin/date"]
  - interval: 6h
    agent: kubernetes
    name: ci-daisy-e2e
    spec:
     containers:
-    - image: gcr.io/compute-image-tools-test/daisy-e2e:latest
+    - image: gcr.io/main-nucleus-128012/daisy-e2e:latest
       args:
       - "--tests=e2e_tests"
       env:
@@ -110,10 +117,10 @@ periodics:
       - name: REPO_NAME
         value: compute-image-tools
       volumeMounts:
-      - name: compute-image-tools-test-service-account
-        mountPath: /etc/compute-image-tools-test-service-account
+      - name: main-nucleus-128012-service-account
+        mountPath: /etc/main-nucleus-128012-service-account
         readOnly: true
     volumes:
-    - name: compute-image-tools-test-service-account
+    - name: main-nucleus-128012-service-account
       secret:
-       secretName: compute-image-tools-test-service-account
+       secretName: main-nucleus-128012-service-account

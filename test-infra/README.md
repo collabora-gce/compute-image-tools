@@ -3,12 +3,12 @@
 ## Prow and Gubenator
 We use [Prow](https://github.com/kubernetes/test-infra/tree/master/prow)
 to run periodic, postsubmit, and presubmit (PRs) tests on packages in this.
-repo. Our Prow GKE cluster runs in the GCP project, `compute-image-tools-test`.
+repo. Our Prow GKE cluster runs in the GCP project, `main-nucleus-128012`.
 
 We publish test results to
 [Gubenator](https://github.com/kubernetes/test-infra/tree/master/gubernator).
 Specifically, we publish test data/logs
-to the publicly readable GCS bucket, `compute-image-tools-test`.
+to the publicly readable GCS bucket, `main-nucleus-128012`.
 
 Links:
 * Prow dashboard http://35.227.234.167/
@@ -42,7 +42,7 @@ The artifacts directory is set with the environment variable `${ARTIFACTS}`.
 
 ## Prow job: daisy-e2e
 daisy-e2e invokes our latest Daisy binary against the
-`compute-image-tools-test` GCP project. It runs the workflows matching
+`main-nucleus-128012` GCP project. It runs the workflows matching
 `daisy_worklows/e2e_tests/*.wf.json`.
 Each matching workflow is run as a test case.
 
