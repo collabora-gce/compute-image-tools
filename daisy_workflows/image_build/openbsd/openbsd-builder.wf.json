@@ -1,0 +1,70 @@
+{
+  "Name": "openbsd-builder",
+  "Vars": {
+    "version": {"Required": true, "Description": "OpenBSD release version"},
+    "arch": {"Value": "amd64", "Description": "OpenBSD architecture"},
+    "mirror": {"Value": "ftp.usa.openbsd.org", "DescripTion": "Mirror address to be used in installation"},
+    "source_image": {
+      "Value": "projects/debian-cloud/global/images/family/debian-9",
+      "Description": "The image used to build OpenBSD."
+    },
+    "image_dest": {"Required": true, "Description": "Destination image filepath to be saved on Google storage."}
+  },
+  "Sources": {
+    "bootstrap": "../../linux_common/bootstrap.py",
+    "test_files/builder.sh": "./builder.sh",
+    "test_files/builder.py": "./openbsd_builder.py",
+    "test_files/utils.py": "../../linux_common/utils.py"
+  },
+  "Steps": {
+    "create-disk": {
+      "CreateDisks": [
+        {
+          "Name": "disk",
+          "SourceImage": "${source_image}",
+          "Type": "pd-ssd"
+        }
+      ]
+    },
+    "create-instance": {
+      "CreateInstances": [
+        {
+          "Name": "inst-openbsd-builder",
+          "Disks": [{"Source": "disk"}],
+          "StartupScript": "bootstrap",
+          "Metadata": {
+            "debian_install_google_api_python_client": "yes",
+            "files_gcs_dir": "${SOURCESPATH}/test_files",
+            "script": "builder.py",
+            "prefix": "Build",
+            "zone": "${ZONE}",
+            "project": "${PROJECT}",
+            "version": "${version}",
+            "arch": "${arch}",
+            "mirror": "${mirror}",
+            "image_dest": "${image_dest}"
+          },
+          "Scopes": ["https://www.googleapis.com/auth/devstorage.read_write"]
+        }
+      ]
+    },
+    "wait": {
+      "Timeout": "50m",
+      "WaitForInstancesSignal": [
+        {
+          "Name": "inst-openbsd-builder",
+          "SerialOutput": {
+            "Port": 1,
+            "SuccessMatch": "BuildSuccess",
+            "FailureMatch": "BuildFailed",
+            "StatusMatch": "BuildStatus"
+          }
+        }
+      ]
+    }
+  },
+  "Dependencies": {
+    "create-instance": ["create-disk"],
+    "wait": ["create-instance"]
+  }
+}
